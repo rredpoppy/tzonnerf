@@ -1,12 +1,19 @@
 (ns tzonnerf.core
     (:require
-      [reagent.core :as r]))
+      [reagent.core :as r]
+      [reagent-forms.core :as f]))
+
+(def state (r/atom {:timezones [] :timezone nil}))
 
 ;; -------------------------
 ;; Views
 
 (defn home-page []
-  [:div [:h2 "Welcome to Reagent"]])
+  [:nav {:class "navbar navbar-default"}
+   [:div {:class "container-fluid"}
+    [:div {:class "navbar-header"}
+     [:a {:class "navbar-brand", :href "#"}
+      "TimeZonner"]]]])
 
 ;; -------------------------
 ;; Initialize app
